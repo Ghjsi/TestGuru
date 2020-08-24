@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2020_08_24_175905) do
     t.string "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "correct", null: false
     t.integer "question_id"
   end
 
@@ -47,4 +46,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_175905) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "questions", "tests"
+  add_foreign_key "tests", "categories"
 end
