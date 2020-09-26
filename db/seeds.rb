@@ -9,9 +9,9 @@
 user = User.create!(login: 'Petya')
 
 categories = Category.create!([
-  {title: 'HTML'},
-  {title: 'CSS'},
-  {title: 'Machine Learning'},
+  {c_title: 'HTML'},
+  {c_title: 'CSS'},
+  {c_title: 'Machine Learning'},
 ])
 
 tests = Test.create!([
@@ -26,7 +26,7 @@ questions = Question.create!([
   {body: '1. Для чего используют тег <p>?', test_id: tests[0].id},
   {body: '2. Какие единицы измерения могут использоваться для атрибута ширины?', test_id: tests[0].id},
   {body: '3. Использование какого тэга позволяет добавлять одну строку текста без начала нового абзаца?',
-  	test_id: tests[0].id}
+  	test_id: tests[0].id},
 
   {body: '1. Какое из значений свойства background-attachment закрепляет фоновое изображение относительно окна браузера?', 
   	test_id: tests[1].id},
@@ -51,7 +51,7 @@ answers = Answer.create!([
   {body: 'Пиксели и миллиметры', question_id: questions[1].id},
 
   {body: '<line/>', question_id: questions[2].id},
-  {body: '<br/>',correct: true, question_id: questions[2].id},
+  {body: '<br/>', correct: true, question_id: questions[2].id},
   {body: '<td/>', question_id: questions[2].id},
 
 
@@ -83,3 +83,5 @@ answers = Answer.create!([
   {body: 'Определение порядка признака согласно рангу ',correct: true, question_id: questions[8].id}
 
 ])
+
+result = Result.create!(test_id: 1, user_id: 1)
