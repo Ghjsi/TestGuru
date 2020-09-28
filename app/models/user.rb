@@ -3,9 +3,9 @@ class User < ApplicationRecord
 
   def show_tests(level)
 
-  level = level.to_i
-  id = self.id
-  tests_passed = Test.joins('JOIN results ON tests.id = results.test_id').where(level: level, user_id: id)
+  # id = self.id
+  
+  Test.joins('JOIN results ON tests.id = results.test_id').where(level: level, user_id: id)
 
   end
 
