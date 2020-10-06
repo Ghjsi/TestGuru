@@ -1,5 +1,7 @@
 class Test < ApplicationRecord
-  has_many :users
+  belongs_to :user
+  belongs_to :category
+  has_many :questions
 
   def self.category(category_name)
     Test
